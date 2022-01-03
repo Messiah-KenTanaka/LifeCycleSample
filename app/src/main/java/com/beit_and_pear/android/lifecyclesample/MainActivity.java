@@ -2,8 +2,10 @@ package com.beit_and_pear.android.lifecyclesample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
     public void onDestroy() {
         Log.i("LifeCycleSample", "Main onDestroy() called");
         super.onDestroy();
+    }
+
+    // {次}ボタンがタップされた時の処理
+    public void onButtonClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SubActivity.class);
+        // アクティビティを起動
+        startActivity(intent);
     }
 }
